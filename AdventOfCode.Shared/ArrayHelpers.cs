@@ -2,7 +2,7 @@
 
 public static class ArrayHelpers
 {
-    public static TType[] ParseAs<TType>(this string[] source)
+    public static TType[] ParseAs<TType>(this IEnumerable<string> source)
     {
         return source.Select(e =>
         {
