@@ -11,13 +11,12 @@ internal sealed class Puzzle5 : PuzzleBase<string>
         // movement
         foreach (var movement in lines.Skip(movementStartIndex).Select(ParseMovement))
         {
-            for (var currentCreate = 0; currentCreate < movement.Quantity; currentCreate++)
-            {
-                var crate = stacks[movement.From].Pop();
-                stacks[movement.To].Push(crate);
-            }
+            var skip = stacks[movement.From].Count - movement.Quantity;
+
+            stacks[movement.To].InsertRange(stacks[movement.To].Count, stacks[movement.From].Skip(skip).Reverse());
+            stacks[movement.From].RemoveRange(skip, movement.Quantity);
         }
-        return new string(stacks.Select(x => x.Peek()).ToArray());
+        return new string(stacks.Select(x => x.Last()).ToArray());
     }
 
     protected override string Solution2(IEnumerable<string> input)
@@ -29,20 +28,15 @@ internal sealed class Puzzle5 : PuzzleBase<string>
         // movement
         foreach (var movement in lines.Skip(movementStartIndex).Select(ParseMovement))
         {
-            var crates = Enumerable
-                .Range(0, movement.Quantity)
-                .Select(_ => stacks[movement.From].Pop())
-                .Reverse()
-                .ToArray();
-            foreach (var crate in crates)
-            {
-                stacks[movement.To].Push(crate);
-            }
+            var skip = stacks[movement.From].Count - movement.Quantity;
+
+            stacks[movement.To].InsertRange(stacks[movement.To].Count, stacks[movement.From].Skip(skip));
+            stacks[movement.From].RemoveRange(skip, movement.Quantity);
         }
-        return new string(stacks.Select(x => x.Peek()).ToArray());
+        return new string(stacks.Select(x => x.Last()).ToArray());
     }
     
-    private static (int MovementStartIndex, Stack<char>[] ExtractedStacks) ParseStacks(string[] lines)
+    private static (int MovementStartIndex, List<char>[] ExtractedStacks) ParseStacks(string[] lines)
     {
         var stackConfiguration = lines.TakeWhile(x => !string.IsNullOrEmpty(x)).Reverse().ToArray();
         var stackCount = stackConfiguration
@@ -51,14 +45,14 @@ internal sealed class Puzzle5 : PuzzleBase<string>
             .Select(x => Convert.ToInt32(x))
             .Count();
 
-        var stacks = Enumerable.Range(0, stackCount).Select(x => new Stack<char>()).ToArray();
+        var stacks = Enumerable.Range(0, stackCount).Select(x => new List<char>()).ToArray();
         foreach (var layer in stackConfiguration.Skip(1))
         {
             for (int row = 0; row < stackCount; row++)
             {
                 if (layer[1 + (4 * row)] is var crate && crate != ' ')
                 {
-                    stacks[row].Push(crate);
+                    stacks[row].Add(crate);
                 }
             }
         }
