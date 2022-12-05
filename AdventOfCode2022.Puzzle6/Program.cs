@@ -1,0 +1,1 @@
+﻿new Puzzle6().Solve();
