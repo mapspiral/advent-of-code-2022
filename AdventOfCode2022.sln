@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2022.Puzzle5", "AdventOfCode2022.Puzzle5\AdventOfCode2022.Puzzle5.csproj", "{009A7384-F227-4C17-BCAF-88891646B42E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2022.Puzzle6", "AdventOfCode2022.Puzzle6\AdventOfCode2022.Puzzle6.csproj", "{43EA4CAA-A9A9-40CF-B754-C1E9ACE55E64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2022.Puzzle7", "AdventOfCode2022.Puzzle7\AdventOfCode2022.Puzzle7.csproj", "{C8052E14-D070-4C20-BD5C-4F7AAA4C42BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{43EA4CAA-A9A9-40CF-B754-C1E9ACE55E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43EA4CAA-A9A9-40CF-B754-C1E9ACE55E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43EA4CAA-A9A9-40CF-B754-C1E9ACE55E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8052E14-D070-4C20-BD5C-4F7AAA4C42BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8052E14-D070-4C20-BD5C-4F7AAA4C42BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8052E14-D070-4C20-BD5C-4F7AAA4C42BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8052E14-D070-4C20-BD5C-4F7AAA4C42BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{25051F8D-68D4-4F4A-A306-BB1FF2F94806} = {D3211E6A-30F5-45ED-A59B-11AF1D5C0158}
@@ -64,5 +70,6 @@ Global
 		{8E19D4CC-F4E1-4A54-8535-ECAAA0D6EEFD} = {D3211E6A-30F5-45ED-A59B-11AF1D5C0158}
 		{009A7384-F227-4C17-BCAF-88891646B42E} = {D3211E6A-30F5-45ED-A59B-11AF1D5C0158}
 		{43EA4CAA-A9A9-40CF-B754-C1E9ACE55E64} = {D3211E6A-30F5-45ED-A59B-11AF1D5C0158}
+		{C8052E14-D070-4C20-BD5C-4F7AAA4C42BB} = {D3211E6A-30F5-45ED-A59B-11AF1D5C0158}
 	EndGlobalSection
 EndGlobal

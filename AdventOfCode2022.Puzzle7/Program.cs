@@ -1,0 +1,1 @@
+﻿new Puzzle7().Solve();
