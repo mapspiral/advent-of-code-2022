@@ -1,0 +1,1 @@
+﻿new Puzzle8().Solve();
