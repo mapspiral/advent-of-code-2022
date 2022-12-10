@@ -6,7 +6,7 @@ public sealed class Puzzle10Tests : TestBase<Puzzle10>
         var sut = CreatePuzzle();
         var solution = sut.Solution1(GetInput("sample.txt"));
         
-        solution.Should().Be(null);
+        solution.Should().Be("13140");
     }
     
     [Fact]
@@ -15,7 +15,7 @@ public sealed class Puzzle10Tests : TestBase<Puzzle10>
         var sut = CreatePuzzle();
         var solution = sut.Solution1(GetInput("input.txt"));
         
-        solution.Should().Be(null);
+        solution.Should().Be("15140");
     }
     
     [Fact]
@@ -23,8 +23,13 @@ public sealed class Puzzle10Tests : TestBase<Puzzle10>
     {
         var sut = CreatePuzzle();
         var solution = sut.Solution2(GetInput("sample.txt"));
-        
-        solution.Should().Be(null);
+        solution.Should().Be(
+            "##..##..##..##..##..##..##..##..##..##.." + Environment.NewLine +
+            "###...###...###...###...###...###...###." + Environment.NewLine +
+            "####....####....####....####....####...." + Environment.NewLine +
+            "#####.....#####.....#####.....#####....." + Environment.NewLine +
+            "######......######......######......####" + Environment.NewLine +
+            "#######.......#######.......#######.....");
     }
     
     [Fact]
@@ -32,7 +37,12 @@ public sealed class Puzzle10Tests : TestBase<Puzzle10>
     {
         var sut = CreatePuzzle();
         var solution = sut.Solution2(GetInput("input.txt"));
-        
-        solution.Should().Be(null);
+        solution.Should().Be(
+            "###..###....##..##..####..##...##..###.." + Environment.NewLine +
+            "#..#.#..#....#.#..#....#.#..#.#..#.#..#." + Environment.NewLine +
+            "###..#..#....#.#..#...#..#....#..#.#..#." + Environment.NewLine +
+            "#..#.###.....#.####..#...#.##.####.###.." + Environment.NewLine +
+            "#..#.#....#..#.#..#.#....#..#.#..#.#...." + Environment.NewLine +
+            "###..#.....##..#..#.####..###.#..#.#....");
     }
 }
